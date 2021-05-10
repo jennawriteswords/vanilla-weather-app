@@ -5,69 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>Weather App</title>
   </head>
   <body>
     <div class="weather-app">
       <div class="columns">
-        <div class="column">
+        <div class="column" id="first-column">
           <h1>Bethesda</h1>
           <p>Thursday 1:00 PM</p>
           <p>Partly Cloudy</p>
           <button>Current City</button>
         </div>
-        <div class="column"></div>
-        <img src="src/partly_cloudy.png" width="80px" />
-        <h2>63</h2>
-        <p>°F/°C</p>
-        <form>
-          <input type="text" placeholder="Enter a City" />
-          <input type="submit" value="Search" />
-        </form>
-        <div class="column">
+        <div class="column" id="second-column">
+          <img src="src/partly_cloudy.png" width="50%" id="today-image" />
+          <h2>63 <sup>F/°C</sup></h2>
+          <form>
+            <input type="text" placeholder="Enter a City" />
+            <input type="submit" value="Search" />
+          </form>
+        </div>
+        <div class="column" id="third-column">
           <p>Precipitation: 0%</p>
           <p>Humidity: 37%</p>
           <p>Wind: 7mph</p>
           <button>Random City</button>
         </div>
       </div>
-      <div class="forecast">
-        <div class="day-weather">
-          <p>Thu</p>
-          <img src="src/partly_cloudy.png" width="50px" />
-          <p>64°/46°</p>
-        </div>
-        <div class="day-weather">
-          <p>Fri</p>
-          <img src="src/partly_cloudy.png" width="50px" />
-          <p>64°/46°</p>
-        </div>
-        <div class="day-weather">
-          <p>Sat</p>
-          <img src="src/partly_cloudy.png" width="50px" />
-          <p>64°/46°</p>
-        </div>
-        <div class="day-weather">
-          <p>Sun</p>
-          <img src="src/partly_cloudy.png" width="50px" />
-          <p>64°/46°</p>
-        </div>
-        <div class="day-weather">
-          <p>Mon</p>
-          <img src="src/partly_cloudy.png" width="50px" />
-          <p>64°/46°</p>
-        </div>
-        <div class="day-weather">
-          <p>Tue</p>
-          <img src="src/partly_cloudy.png" width="50px" />
-          <p>64°/46°</p>
-        </div>
-        <div class="day-weather">
-          <p>Wed</p>
-          <img src="src/partly_cloudy.png" width="50px" />
-          <p>64°/46°</p>
-        </div>
-      </div>
+      <table style="width: 100%" class="forecast">
+        <tr class="days">
+          <th>Thu</th>
+          <th>Fri</th>
+          <th>Sat</th>
+          <th>Sun</th>
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+        </tr>
+        <tr>
+          <th><img src="src/partly_cloudy.png" width="50px" /></th>
+          <th><img src="src/partly_cloudy.png" width="50px" /></th>
+          <th><img src="src/partly_cloudy.png" width="50px" /></th>
+          <th><img src="src/partly_cloudy.png" width="50px" /></th>
+          <th><img src="src/partly_cloudy.png" width="50px" /></th>
+          <th><img src="src/partly_cloudy.png" width="50px" /></th>
+          <th><img src="src/partly_cloudy.png" width="50px" /></th>
+        </tr>
+        <tr class="temps">
+          <th>64°/46°</th>
+          <th>64°/46°</th>
+          <th>64°/46°</th>
+          <th>64°/46°</th>
+          <th>64°/46°</th>
+          <th>64°/46°</th>
+          <th>64°/46°</th>
+        </tr>
+      </table>
     </div>
     <script>
       src = "src/scripts.js";
