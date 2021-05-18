@@ -28,12 +28,19 @@ function displayTemperature(response) {
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
+  let icon = document.querySelector("#icon");
   temperature.innerHTML = Math.round(response.data.main.temp);
   city.innerHTML = response.data.name;
   conditions.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = "Humidity: " + response.data.main.humidity + "%";
   wind.innerHTML = "Wind: " + Math.round(response.data.wind.speed) + " mph";
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  dateElement.innerHTML =
+    "Last Updated: " + formatDate(response.data.dt * 1000);
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute("alt", response.data.weather[0].description);
 }
 
 let city = "New York";
