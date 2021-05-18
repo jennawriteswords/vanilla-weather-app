@@ -62,6 +62,11 @@ h2 {
   display: inline;
 }
 
+a {
+  font-family: "Open Sans", sans-serif;
+  color: #a7bbc7;
+}
+
 p {
   font-family: "Open Sans", sans-serif;
   color: #a7bbc7;

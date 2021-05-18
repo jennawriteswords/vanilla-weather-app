@@ -26,9 +26,16 @@
         <div class="column" id="second-column">
           <img src="#" width="50%" id="icon" />
           <h2 id="temperature"></h2>
-          <h2><sup>°C/°F</sup></h2>
-          <form>
-            <input type="text" placeholder="Enter a City" />
+          <h2>
+            <sup>°C/<a href="#">°F</a></sup>
+          </h2>
+          <form id="search-form">
+            <input
+              id="city-input"
+              type="text"
+              placeholder="Enter a City"
+              autocomplete="off"
+            />
             <input type="submit" value="Search" />
           </form>
         </div>
