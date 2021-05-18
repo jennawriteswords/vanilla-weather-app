@@ -48,6 +48,8 @@ h1 {
   padding-top: -15px;
   width: 50%;
   text-align: center;
+  display: block;
+  margin: 0 auto;
 }
 
 h2 {
@@ -57,11 +59,17 @@ h2 {
   color: #da7f8f;
   padding-top: -20px;
   margin: auto;
+  display: inline;
 }
 
 p {
   font-family: "Open Sans", sans-serif;
   color: #a7bbc7;
+  text-transform: capitalize;
+}
+
+#wind {
+  text-transform: none;
 }
 
 button {

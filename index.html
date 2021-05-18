@@ -10,29 +10,31 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="src/scripts.js"></script>
     <title>Weather App</title>
   </head>
   <body>
     <div class="weather-app">
       <div class="columns">
         <div class="column" id="first-column">
-          <h1>Bethesda</h1>
+          <h1 id="city"></h1>
           <p>Thursday 1:00 PM</p>
-          <p>Partly Cloudy</p>
+          <p id="conditions"></p>
           <button>Current City</button>
         </div>
         <div class="column" id="second-column">
           <img src="src/partly_cloudy.png" width="50%" id="today-image" />
-          <h2>63 <sup>F/°C</sup></h2>
+          <h2 id="temperature"></h2>
+          <h2><sup>F/°C</sup></h2>
           <form>
             <input type="text" placeholder="Enter a City" />
             <input type="submit" value="Search" />
           </form>
         </div>
         <div class="column" id="third-column">
-          <p>Precipitation: 0%</p>
-          <p>Humidity: 37%</p>
-          <p>Wind: 7mph</p>
+          <p id="humidity"></p>
+          <p id="wind"></p>
           <button>Random City</button>
         </div>
       </div>
@@ -66,8 +68,5 @@
         </tr>
       </table>
     </div>
-    <script>
-      src = "src/scripts.js";
-    </script>
   </body>
 </html>
