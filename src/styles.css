@@ -62,9 +62,11 @@ h2 {
   display: inline;
 }
 
-a {
+a,
+footer {
   font-family: "Open Sans", sans-serif;
   color: #a7bbc7;
+  text-align: center;
 }
 
 p {
@@ -73,7 +75,8 @@ p {
   text-transform: capitalize;
 }
 
-#wind {
+#wind,
+#pressure {
   text-transform: none;
 }
 
