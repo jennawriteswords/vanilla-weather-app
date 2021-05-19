@@ -13,6 +13,21 @@ body {
   margin: 10px auto;
 }
 
+a {
+  font-family: "Open Sans", sans-serif;
+  color: #a7bbc7;
+}
+
+.active {
+  color: #da7f8f;
+  cursor: default;
+  text-decoration: none;
+}
+
+.active:hover {
+  text-decoration: none;
+}
+
 .columns {
   display: flex;
 }
@@ -62,7 +77,6 @@ h2 {
   display: inline;
 }
 
-a,
 footer {
   font-family: "Open Sans", sans-serif;
   color: #a7bbc7;

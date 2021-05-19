@@ -29,10 +29,11 @@ function displayTemperature(response) {
   let pressure = document.querySelector("#pressure");
   let dateElement = document.querySelector("#date");
   let icon = document.querySelector("#icon");
-  temperature.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  temperature.innerHTML = Math.round(celsiusTemperature);
   conditions.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = "Humidity: " + response.data.main.humidity + "%";
-  wind.innerHTML = "Wind: " + Math.round(response.data.wind.speed) + " mph";
+  wind.innerHTML = "Wind: " + Math.round(response.data.wind.speed) + " km/h";
   pressure.innerHTML = "Pressure: " + response.data.main.pressure + " mb";
   dateElement.innerHTML =
     "Last Updated: " + formatDate(response.data.dt * 1000);
@@ -56,15 +57,22 @@ function searchCity(event) {
   axios.get(apiUrl).then(displayTemperature);
 }
 
-/*function displayFahrenheit(event) {
+function displayFahrenheit(event) {
   event.preventDefault();
-  let fahrenheitTemperature = (14 * 9) / 5 + 32;
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = fahrenheitTemperature;
-}*/
+  temperature.innerHTML = Math.round(fahrenheitTemperature);
+}
 
-//let fahrenheitLink = document.querySelector("#fahrenheit-link");
-//fahrenheitLink.addEventListener("click", displayFahrenheit);
+function displayCelsius(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temperature");
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+}
 
 function retrievePosition(position) {
   navigator.geolocation.getCurrentPosition(retrievePosition);
@@ -81,12 +89,6 @@ function retrievePosition(position) {
   axios.get(coordsApiUrl).then(displayTemperature);
 }
 
-let current = document.querySelector("#current");
-current.addEventListener("click", retrievePosition);
-
-let search = document.querySelector("#search-form");
-search.addEventListener("submit", searchCity);
-
 function initialPage() {
   let city = "New York";
   let h1 = document.querySelector("#city");
@@ -97,5 +99,19 @@ function initialPage() {
   let apiUrl = `${apiEndPoint}?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayTemperature);
 }
+
+let current = document.querySelector("#current");
+current.addEventListener("click", retrievePosition);
+
+let search = document.querySelector("#search-form");
+search.addEventListener("submit", searchCity);
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsius);
 
 initialPage();
