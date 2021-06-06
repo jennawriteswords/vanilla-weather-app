@@ -100,8 +100,8 @@ function initialPage() {
   axios.get(apiUrl).then(displayTemperature);
 }
 
-let current = document.querySelector("#current");
-current.addEventListener("click", retrievePosition);
+let currentCity = document.querySelector("#current");
+currentCity.addEventListener("click", retrievePosition);
 
 let search = document.querySelector("#search-form");
 search.addEventListener("submit", searchCity);

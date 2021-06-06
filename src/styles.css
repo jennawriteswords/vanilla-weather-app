@@ -144,3 +144,7 @@ input [type="text"] {
   color: #a7bbc7;
   border: #a7bbc7;
 }
+
+.forecast-temp-min {
+  opacity: 0.6;
+}
