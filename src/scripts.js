@@ -21,6 +21,34 @@ function formatDate(timestamp) {
   return `${day} ${hour}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastDaysElement = document.querySelector("#forecast-days");
+  let forecastDaysHTML = "";
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastDaysHTML = forecastDaysHTML + `<th class="day-of-week">${day}`;
+    forecastDaysHTML = forecastDaysHTML + `</th>`;
+    forecastDaysElement.innerHTML = forecastDaysHTML;
+  });
+  let forecastIconsElement = document.querySelector("#forecast-icons");
+  let forecastIconsHTML = "";
+  forecastIconsElement =
+    `<th>` +
+    forecastIconsHTML +
+    `<img src="src/partly_cloudy.png" width="50px" class="icons"/>`;
+  forecastIconsHTML = forecastIconsHTML + `</th>`;
+  forecastIconsElement.innerHTML = forecastIconsHTML;
+  let forecastTempsElement = document.querySelector("#forecast-temps");
+  let forecastTempsHTML = "";
+  forecastTempsHTML =
+    forecastTempsHTML +
+    `<th class="temps"><span class="forecast-temp-max">64°</span>/<span
+              class="forecast-temp-min">46°</span>
+          </th>`;
+  forecastTempsHTML = forecastTempsHTML + `</th>`;
+  forecastTempsElement.innerHTML = forecastTempsHTML;
+}
+
 function displayTemperature(response) {
   let temperature = document.querySelector("#temperature");
   let conditions = document.querySelector("#conditions");
@@ -113,5 +141,7 @@ fahrenheitLink.addEventListener("click", displayFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsius);
+
+displayForecast();
 
 initialPage();
