@@ -4,9 +4,9 @@ body {
 }
 
 .weather-app {
-  border: 1px solid #da7f8f;
+  border: 1px solid #0393b7;
   border-radius: 10px;
-  background: #faf3f3;
+  background: #fff;
   padding: 5px 5px 25px 5px;
   max-width: 960px;
   width: 95%;
@@ -15,11 +15,11 @@ body {
 
 a {
   font-family: "Open Sans", sans-serif;
-  color: #a7bbc7;
+  color: #000000;
 }
 
 .active {
-  color: #da7f8f;
+  color: #0393b7;
   cursor: default;
   text-decoration: none;
 }
@@ -32,7 +32,7 @@ h1 {
   font-family: "Playfair Display", serif;
   font-size: 46px;
   font-weight: 800;
-  color: #da7f8f;
+  color: #0393b7;
   margin-bottom: 15px;
 }
 
@@ -47,7 +47,7 @@ h2 {
   font-family: "Playfair Display", serif;
   font-size: 32px;
   font-weight: 800;
-  color: #da7f8f;
+  color: #0393b7;
   padding-top: -20px;
   margin: 0 auto;
   display: inline;
@@ -55,13 +55,13 @@ h2 {
 
 footer {
   font-family: "Open Sans", sans-serif;
-  color: #a7bbc7;
+  color: #000;
   text-align: center;
 }
 
 p {
   font-family: "Open Sans", sans-serif;
-  color: #a7bbc7;
+  color: #000;
   text-transform: capitalize;
 }
 
@@ -73,9 +73,9 @@ p {
 button {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
-  background: #da7f8f;
-  color: #faf3f3;
-  border: 1px solid #da7f8f;
+  background: #0393b7;
+  color: #f3f8fa;
+  border: 1px solid #0393b7;
   border-radius: 10px;
   padding: 5px 20px;
   cursor: pointer;
@@ -102,35 +102,39 @@ form {
 .days {
   font-family: "Playfair Display", serif;
   font-size: 20px;
-  color: #a7bbc7;
+  color: #000;
 }
 
 .temps {
   font-family: "Open Sans", sans-serif;
-  color: #a7bbc7;
+  color: #000;
 }
 
 sup {
   font-family: "Open Sans", sans-serif;
-  color: #a7bbc7;
+  color: #000;
   font-size: 12pt;
 }
 
 input [type="button"],
 input[type="submit"],
 input[type="reset"] {
-  border: 1px solid #da7f8f;
-  background: #da7f8f;
-  color: #faf3f3;
+  border: 1px solid #0393b7;
+  background: #0393b7;
+  color: #f3f8fa;
   border-radius: 10px;
   padding: 5px 10px;
 }
 
 input [type="text"] {
-  color: #a7bbc7;
-  border: #a7bbc7;
+  color: #000;
+  border: #000;
 }
 
 .forecast-temp-min {
   opacity: 0.6;
+}
+
+.weather-forecast {
+  text-align: center;
 }
