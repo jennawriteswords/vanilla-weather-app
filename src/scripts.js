@@ -28,6 +28,24 @@ function formatDay(timestamp) {
   return days[day];
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+    <div class="weather-forecast-date">${day}</div>
+              <img src="src/partly_cloudy.png" width="50px" class="forecast-icon"/>
+              <div class="weather-forecast-temps"><p><span class="forecast-temp-max">64°</span>/<span
+              class="forecast-temp-min">46°</span></p></div>
+              </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   let temperature = document.querySelector("#temperature");
   let conditions = document.querySelector("#conditions");
